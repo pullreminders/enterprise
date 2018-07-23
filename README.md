@@ -1,11 +1,11 @@
 ## Overview
 
-This repo contains instructions on setting up Pull Reminders on-premises.
+This repo contains work-in-progress instructions on setting up Pull Reminders on-premises.
 
 1. [Choose a host](#choose-a-host)
-- [Create a Slack App](#create-a-slack-app)
-- [Create a GitHub App](#create-a-github-app)
-- [Setup Pull Reminders](#setup-pull-reminders)
+2. [Create a Slack App](#create-a-slack-app)
+3. [Create a GitHub App](#create-a-github-app)
+4. [Setup Pull Reminders](#setup-pull-reminders)
 
 ## Choose a host
 
