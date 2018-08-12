@@ -93,6 +93,8 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     GITHUB_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBA...
     ```
 
+    You can view a full [example dockerenv file](./dockerenv.example).
+
 6. Start the container with your `dockerenv` file:
 
     ```
