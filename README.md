@@ -33,8 +33,9 @@ Pull Reminders requires a Slack app in order to post messages. Follow the steps 
     user.profile:read
     team:read
     ```
-    
-5. Go to the "Bot Users" tab and create a bot user with the name "Pull Reminders" and username "pullreminders".
+
+5. Under the same "OAuth & Permissions" tab, add a new Redirect URI. It should be your hostname plus the path `/auth/slack/callback`, e.g. `https://pullreminders.myco.com/auth/slack/callback`. If you don't know your hostname yet, remember to come back and set this later.
+6. Go to the "Bot Users" tab and create a bot user with the name "Pull Reminders" and username "pullreminders".
 
 ## Create a GitHub App
 
