@@ -83,7 +83,7 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
 2. Download the Pull Reminders docker image
 3. Import it using `docker load -i pullreminders.latest.tar`
 4. Create a working directory on your host `mkdir ~/pullreminders`
-5. Inside this directory, create a `dockerenv` file with the following variables along with values:
+5. Inside this directory, create a `dockerenv` file with the variables set below. Check out a full [example dockerenv file](./dockerenv.example).
 
     ```
     DATABASE_URL=
@@ -104,8 +104,6 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     ```
     GITHUB_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBA...
     ```
-
-    You can view a full [example dockerenv file](./dockerenv.example).
 
 6. Start the container with your `dockerenv` file:
 
