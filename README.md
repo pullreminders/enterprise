@@ -15,7 +15,7 @@ Regarding security – Pull Reminders integrates with GHE as a [GitHub App](http
 
 ## Create a Slack App
 
-Pull Reminders requires a Slack app in order to post messages. Follow the steps below to create a Slack app for your instance of Pull Reminders. You'll also come back later to make a few more updates after setting up your Pull Reminders instance.
+Pull Reminders requires a Slack app in order to post messages. Follow the steps below to create a Slack app for your instance of Pull Reminders.
 
 1. Create a Slack app by going to https://api.slack.com/apps and clicking "Create New App"
 2. Name the app "Pull Reminders" and set the "Development Slack Workspace" to your team's workspace
