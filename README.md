@@ -74,8 +74,8 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     Organization
     ```
 3. After saving your GitHub App, set your app icon to https://pullreminders.com/app-icon.png and generate a private key. You should also see OAuth credentials and your app ID. You'll use this information along with your private key in the next section.
-4. Though not required, you'll want to go to the "Advanced" tab and transfer ownership of the GitHub App to a superuser or an organization. If it is owned by your individual user account the app can become available if your account is deleted or deactivated.
-
+4. **Important** Go to the "Advanced" tab and click the "Make public" button at the bottom. This allows Pull Reminders to be used and installed by all users of your GitHub Enterprise instance.
+5. Though not required, it is recommended that you transfer ownership of the GitHub App to a superuser or organization so that the app isn't deleted if your individual GitHub account is deactivated. To do this, go under the "Advanced" tab and click the "Transfer ownership" button at the bottom.
 
 ## Setup Pull Reminders
 
