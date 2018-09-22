@@ -94,6 +94,7 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     SLACK_CLIENT_SECRET=
     GITHUB_URL=
     GITHUB_API_ENDPOINT=
+    GITHUB_ENTERPRISE_VERSION=
     GITHUB_APP_URL=
     GITHUB_APP_ID=
     GITHUB_CLIENT_ID=

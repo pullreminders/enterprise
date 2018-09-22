@@ -2,6 +2,7 @@ DATABASE_URL=postgresql://anoda:postgres@docker.for.mac.localhost/pullreminders_
 APP_HOST=http://pullreminders.myco.com
 GITHUB_URL=https://github.myco.com
 GITHUB_API_ENDPOINT=https://github.myco.com/api/v3/
+GITHUB_ENTERPRISE_VERSION=2.13
 GITHUB_APP_URL=https://github.myco.com/apps/pull-reminders
 GITHUB_APP_ID=12
 GITHUB_CLIENT_ID=Iv1.d10590b4e2049d18
