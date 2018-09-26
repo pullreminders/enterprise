@@ -19,7 +19,7 @@ Pull Reminders requires a Slack app in order to post messages. Follow the steps 
 
 1. Create a Slack app by going to https://api.slack.com/apps and clicking "Create New App"
 2. Name the app "Pull Reminders" and set the "Development Slack Workspace" to your team's workspace
-3. Set the app icon to https://pullreminders.com/app-icon.png
+3. Set the app icon to the [image provided in this repo](./icon.png)
 4. Next, go to the "OAuth & Permissions" tab and select the following scopes:
     
     ```
@@ -75,7 +75,7 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     Organization
     ```
     
-3. After saving your GitHub App, set your app icon to https://pullreminders.com/app-icon.png and generate a private key. You should also see OAuth credentials and your app ID. You'll use this information along with your private key in the next section.
+3. After saving your GitHub App, set your app icon to the [image provided in this repo](./icon.png) and generate a private key. You should also see OAuth credentials and your app ID. You'll use this information along with your private key in the next section.
 4. **IMPORTANT:** Go to the "Advanced" tab and click the "Make public" button at the bottom. This allows Pull Reminders to be used and installed by all users of your GitHub Enterprise instance.
 5. Though not required, it is recommended that you transfer ownership of the GitHub App to a superuser or organization so that the app isn't deleted if your individual GitHub account is deactivated. To do this, go under the "Advanced" tab and click the "Transfer ownership" button at the bottom.
 
