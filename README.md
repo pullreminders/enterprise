@@ -30,7 +30,7 @@ Pull Reminders requires a Slack app in order to post messages. Follow the steps 
     identity.basic
     identity.email
     identity.team
-    user.profile:read
+    users.profile:read
     team:read
     ```
 
