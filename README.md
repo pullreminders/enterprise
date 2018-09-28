@@ -1,6 +1,6 @@
 ## Overview
 
-This repo contains work-in-progress instructions on setting up Pull Reminders on-premises.
+This repo contains instructions on setting up Pull Reminders on-premises for integration with GitHub Enterprise.
 
 1. [Choose a host](#choose-a-host)
 2. [Create a Slack App](#create-a-slack-app)
