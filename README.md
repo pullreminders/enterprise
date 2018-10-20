@@ -11,7 +11,7 @@ This repo contains instructions on setting up Pull Reminders on-premises for int
 
 Pull Reminders needs to run on a server within the same security context as your GHE instance so that it can send and receive requests from GitHub. For testing purposes this could just be a computer in your office, but AWS/GC/Azure is ideal. Pull Reminders requires a Postresql database instance and a host to run the web server which is provided as a Docker image.
 
-Regarding security – Pull Reminders integrates with GHE as a [GitHub App](https://developer.github.com/enterprise/2.13/apps/about-apps/#about-github-apps). This means that API permissions and repo access are granted by you when you install the app to one of your GitHub organizations. Pull Reminders requires read access to pull request metadata, repo list, and members. It does not require any read or write access to code. You'll be happy to know that your data won't leave your network other than the API requests to Slack. Your Pull Reminders instance never sends data or makes requests to our servers.
+Regarding security – Pull Reminders integrates with GHE as a [GitHub App](https://developer.github.com/enterprise/2.13/apps/about-apps/#about-github-apps). This means that API permissions and repo access are granted by you when you install the app to one of your GitHub organizations. Pull Reminders requires read access to pull request metadata but does not require any read or write access to code. You'll also be happy to know that your data won't leave your network other than API requests to Slack. Your Pull Reminders instance never sends data or makes requests to our servers.
 
 ## Create a Slack App
 
