@@ -9,7 +9,7 @@ This repo contains instructions on setting up Pull Reminders on-premises for int
 
 ## Choose a host
 
-Pull Reminders needs to run on a server within the same security context as your GHE instance so that it can send and receive requests from GitHub. For testing purposes this could just be a computer in your office, but AWS/GC/Azure is ideal. Pull Reminders requires a Postresql database instance and a host to run the web server which is provided as a Docker image.
+Pull Reminders needs to run on a server within the same security context as your GHE instance so that it can send and receive requests from GitHub. For testing purposes this could just be a computer in your office, but AWS/GC/Azure is ideal. Pull Reminders requires a Postresql database (ie. AWS RDS or Google Cloud SQL) and a host to run the web server which is provided as a Docker image.
 
 Regarding security – Pull Reminders integrates with GHE as a [GitHub App](https://developer.github.com/enterprise/2.13/apps/about-apps/#about-github-apps). This means that API permissions and repo access are granted by you when you install the app to one of your GitHub organizations. Pull Reminders requires read access to pull request metadata but does not require any read or write access to code. You'll also be happy to know that your data won't leave your network other than API requests to Slack. Your Pull Reminders instance never sends data or makes requests to our servers.
 
@@ -85,7 +85,7 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
 2. Download the Pull Reminders docker image
 3. Import it using `docker load -i pullreminders.latest.tar`
 4. Create a working directory on your host `mkdir ~/pullreminders`
-5. Inside this directory, create a `dockerenv` file with the variables set below. Check out a full [example dockerenv file](./dockerenv.example).
+5. Inside this directory, create a `dockerenv` file with the variables set below. Check out a full [example dockerenv file](./dockerenv.example). `DATABASE_URL` is your Postgres connection url – we recommend creating a Postgres database through a managed service like AWS RDS or Google Cloud SQL.
 
     ```
     DATABASE_URL=
