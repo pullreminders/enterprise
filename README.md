@@ -111,5 +111,5 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
 6. Start the container with your `dockerenv` file:
 
     ```
-    docker run -p 3000:3000 --env-file ./dockerenv -d pullreminders
+    docker run -p 80:3000 --env-file ./dockerenv -d pullreminders
     ```
