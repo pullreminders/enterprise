@@ -62,7 +62,7 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     Organization members: Read-only
     ```
     
-    Subscribe to events:
+    Subscribe to events (note – the `Member`option is not available for earlier versions of GitHub Enterprise):
     
     ```
     Issue Comment
@@ -70,7 +70,7 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     Pull request
     Pull request review
     Pull request review comment
-    Member (this option was recently added and may not be available in your version of GitHub)
+    Member
     Membership
     Organization
     ```
