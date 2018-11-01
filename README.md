@@ -70,7 +70,7 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     Pull request
     Pull request review
     Pull request review comment
-    Member
+    Member (this option was recently added and may not be available in your version of GitHub)
     Membership
     Organization
     ```
