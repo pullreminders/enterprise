@@ -116,11 +116,10 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
     
 7. View logs:
 
-  ```
-  # Server logs
-  docker exec <cid> tail log/production.log -f
+    ```
+    # Server logs
+    docker exec <cid> tail log/production.log -f
   
-  # Worker process logs
-  docker exec <cid> tail log/sidekiq.log -f
-  ```
-
+    # Worker process logs
+    docker exec <cid> tail log/sidekiq.log -f
+    ```
