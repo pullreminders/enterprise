@@ -1,4 +1,4 @@
-DATABASE_URL=postgresql://anoda:postgres@docker.for.mac.localhost/pullreminders_dev
+DATABASE_URL=postgresql://foo:bar@ec2-54-235-66-24.compute-1.amazonaws.com/de3o1bludkbi06
 APP_HOST=http://pullreminders.myco.com
 GITHUB_URL=https://github.myco.com
 GITHUB_API_ENDPOINT=https://github.myco.com/api/v3/
