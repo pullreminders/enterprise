@@ -9,7 +9,7 @@ This repo contains instructions on setting up Pull Reminders on-premises for int
 
 ## Choose a host
 
-Pull Reminders requires a Postres database and a host to run a Docker container containing the application server. For optimal performance, your server host should have at least 2 GB RAM and your Postgres database should be run separately (ie. AWS RDS or Google Cloud SQL) with at least 2 GB RAM and 10 GB storage.
+Pull Reminders requires a Postres database and a host to run a Docker container containing the application server. For optimal performance, your server host should have at least 2 GB RAM and your Postgres database should be run separately (ie. AWS RDS or Google Cloud SQL) with at least 2 GB RAM and 10 GB storage. Your Postgres version should be 10 or higher.
 
 Pull Reminders needs to run within the same security context as your GHE instance so that it can send and receive requests from your GitHub Enterprise instance. Pull Reminders integrates with GHE as a [GitHub App](https://developer.github.com/enterprise/2.13/apps/about-apps/#about-github-apps) which means that permissions and access are granted by admin users when installing the app to GitHub organizations. Pull Reminders requires read access to pull request metadata but does not require any read or write access to code. You should also know that your Pull Reminders instance never makes requests back to our servers and your data never leaves your network other than API requests to Slack. 
 
