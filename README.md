@@ -5,7 +5,7 @@ This repo contains instructions on setting up Pull Reminders on-premises for int
 1. [Set up your infrastructure](#set-up-your-infrastructure)
 2. [Create a Slack App](#create-a-slack-app)
 3. [Create a GitHub App](#create-a-github-app)
-4. [Set up your Pull Reminders instance](#set-up-a-pull-reminders-instance)
+4. [Set up your Pull Reminders instance](#set-up-your-pull-reminders-instance)
 
 ## Set up your infrastructure
 
