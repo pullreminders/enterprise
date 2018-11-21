@@ -2,16 +2,16 @@
 
 This repo contains instructions on setting up Pull Reminders on-premises for integration with GitHub Enterprise.
 
-1. [Choose a host](#choose-a-host)
+1. [Set up your infrastructure](#set-up-your-infrastructure)
 2. [Create a Slack App](#create-a-slack-app)
 3. [Create a GitHub App](#create-a-github-app)
-4. [Setup Pull Reminders](#setup-pull-reminders)
+4. [Set up your Pull Reminders instance](#set-up-a-pull-reminders-instance)
 
-## Choose a host
+## Set up your infrastructure
 
-Pull Reminders requires a Postres database and a host to run a Docker container containing the application server. For optimal performance, your server host should have at least 2 GB RAM and your Postgres database should be run separately (ie. AWS RDS or Google Cloud SQL) with at least 2 GB RAM and 10 GB storage. Your Postgres version should be 10 or higher.
+Pull Reminders requires a Postgres database and a host for running a Docker image that contains the Pull Reminders application server. For optimal performance, your host should have at least 2 GB RAM and your Postgres database (run separately, ie. AWS RDS or Google Cloud SQL) should have at least 2 GB RAM and 10 GB storage. Your Postgres version should be 10 or higher.
 
-Pull Reminders needs to run within the same security context as your GHE instance so that it can send and receive requests from your GitHub Enterprise instance. Pull Reminders integrates with GHE as a [GitHub App](https://developer.github.com/enterprise/2.13/apps/about-apps/#about-github-apps) which means that permissions and access are granted by admin users when installing the app to GitHub organizations. Pull Reminders requires read access to pull request metadata but does not require any read or write access to code. You should also know that your Pull Reminders instance never makes requests back to our servers and your data never leaves your network other than API requests to Slack. 
+Pull Reminders needs to run within the same security context as your GitHub Enterprise (GHE) instance so that it can send and receive requests from GHE. Pull Reminders also needs to be able to make external requests to Slack's API, but otherwise Pull Reminders does not send data or make requests outside of your network. For handling HTTPS connections we recommend using an HTTP proxy or load balancer with SSL configured.
 
 ## Create a Slack App
 
@@ -36,11 +36,12 @@ Pull Reminders requires a Slack app in order to post messages. Follow the steps 
 
 5. Under the same "OAuth & Permissions" tab, add a new Redirect URI. It should be your hostname plus the path `/auth/slack/callback`, e.g. `https://pullreminders.myco.com/auth/slack/callback`. If you don't know your hostname yet, remember to come back and set this later.
 6. Go to the "Bot Users" tab and create a bot user with the name "Pull Reminders" and username "pullreminders".
-7. After setting up your Slack app, **do not** install the app to your Slack workspace from Slack's website. You will install the Slack App to your workspace through Pull Reminders once your instance is set up.
+7. After setting up your Slack app, **do not** install the app to your Slack workspace from Slack's website or submit it to the Slack App Directory. You will install the Slack App through Pull Reminders once your instance is set up.
+8. Slack does not currently offer static IPs for whitelisting, but you can [whitelist your IPs in Slack](https://api.slack.com/docs/oauth-safety#ip_whitelisting) if you would like.
 
 ## Create a GitHub App
 
-Pull Reminders requires a GitHub app in order to integrate with your GitHub Enterprise instance. Follow the steps below to create a GitHub App. You'll also come back later to make a few more updates after setting up your Pull Reminders instance.
+Pull Reminders requires a [GitHub App](https://developer.github.com/enterprise/2.13/apps/about-apps/#about-github-apps) in order to integrate with your GitHub Enterprise instance. Follow the steps below to create a GitHub App. You'll also come back later to make a few more updates after setting up your Pull Reminders instance.
 
 1. Go to your GitHub "Settings" then "Developer Settings" then "GitHub Apps", then click "New GitHub App"
 2. Set the fields, permissions, and event subscriptions outlined below. You can always change these later after saving. Note that several of these settings include your Pull Reminders instance hostname, so if you don't know it yet be sure to come back later and update your settings.
@@ -80,7 +81,9 @@ Pull Reminders requires a GitHub app in order to integrate with your GitHub Ente
 4. **IMPORTANT:** Go to the "Advanced" tab and click the "Make public" button at the bottom. This allows Pull Reminders to be used and installed by all users of your GitHub Enterprise instance.
 5. Though not required, it is recommended that you transfer ownership of the GitHub App to a superuser or organization so that the app isn't deleted if your individual GitHub account is deactivated. To do this, go under the "Advanced" tab and click the "Transfer ownership" button at the bottom.
 
-## Setup Pull Reminders
+## Set up your Pull Reminders instance
+
+Pull Reminders is packaged as a Docker image, made available through our private portal.
 
 1. Make sure your server host has Docker installed
 2. Download the Pull Reminders docker image
