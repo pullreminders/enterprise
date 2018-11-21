@@ -6,12 +6,13 @@ This repo contains instructions on setting up Pull Reminders on-premises for int
 2. [Create a Slack App](#create-a-slack-app)
 3. [Create a GitHub App](#create-a-github-app)
 4. [Set up your Pull Reminders instance](#set-up-your-pull-reminders-instance)
+5. [Administration](#administration)
 
 ## Set up your infrastructure
 
-Pull Reminders requires a Postgres database and a host for running a Docker image that contains the Pull Reminders application server. For optimal performance, your host should have at least 2 GB RAM and your Postgres database (run separately, ie. AWS RDS or Google Cloud SQL) should have at least 2 GB RAM and 10 GB storage. Your Postgres version should be 10 or higher.
+Pull Reminders requires a Postgres database and a host for running a Docker image that contains the Pull Reminders application server. For optimal performance, your host should have at least 2 GB RAM and your Postgres database (run separately, e.g., AWS RDS or Google Cloud SQL) should have at least 2 GB RAM and 10 GB storage. Your Postgres version should be 10 or higher. For handling HTTPS connections we recommend using an HTTP proxy (e.g., nginx) or load balancer with SSL configured.
 
-Pull Reminders needs to run within the same security context as your GitHub Enterprise (GHE) instance so that it can send and receive requests from GHE. Pull Reminders also needs to be able to make external requests to Slack's API, but otherwise Pull Reminders does not send data or make requests outside of your network. For handling HTTPS connections we recommend using an HTTP proxy or load balancer with SSL configured.
+Pull Reminders needs to run within the same security context as your GitHub Enterprise (GHE) instance so that it can send and receive requests from GHE. Pull Reminders also needs to be able to make external requests to Slack's API, but otherwise Pull Reminders does not send data or make requests outside of your network. 
 
 ## Create a Slack App
 
@@ -83,7 +84,7 @@ Pull Reminders requires a [GitHub App](https://developer.github.com/enterprise/2
 
 ## Set up your Pull Reminders instance
 
-Pull Reminders is packaged as a Docker image, made available through our private portal.
+Pull Reminders is packaged as a Docker image, made available through our private portal. Follow the steps below to set up and launch your Pull Reminders instance.
 
 1. Make sure your server host has Docker installed
 2. Download the Pull Reminders docker image
@@ -118,12 +119,22 @@ Pull Reminders is packaged as a Docker image, made available through our private
     docker run --rm -p 80:3000 --env-file ./dockerenv -d pullreminders
     ```
     
-7. View logs:
+7. For handling HTTPS (443) connections we recommend using an HTTP proxy (e.g., nginx) or load balancer with SSL configured.
 
-    ```
-    # Server logs
-    docker exec <cid> tail log/production.log -f
+## Administration
+
+This section contains information on administering and maintaining your Pull Reminders instance.
+
+#### Accessing logs
+
+```
+# Server logs
+docker exec <cid> tail log/production.log -f
   
-    # Worker logs
-    docker exec <cid> tail log/sidekiq.log -f
-    ```
+# Worker logs
+docker exec <cid> tail log/sidekiq.log -f
+```
+
+#### Installing updates
+
+We periodically release updates, provided as a new Docker image. Update your Pull Reminders instance by downloading and running the new Docker image.
