@@ -118,8 +118,10 @@ Pull Reminders is packaged as a Docker image, made available through our private
     ```
     docker run --rm -p 80:3000 --env-file ./dockerenv -d pullreminders
     ```
-    
-7. For handling HTTPS (443) connections we recommend using an HTTP proxy (e.g., nginx) or load balancer with SSL configured.
+
+7. Browse to your instance's URL and you should be able to login. Follow the instructions presented in the app to install the GitHub App to an organization and then connect it to Slack.
+
+8. For handling HTTPS (443) connections we recommend using an HTTP proxy (e.g., nginx) or load balancer with SSL configured.
 
 ## Administration
 
