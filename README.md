@@ -105,6 +105,7 @@ Pull Reminders is packaged as a Docker image, made available through our private
     GITHUB_CLIENT_ID=
     GITHUB_CLIENT_SECRET=
     GITHUB_PRIVATE_KEY=
+    ENABLE_ONBOARDING=1
     ```
     
     Due to limitations in Docker's [parsing of multi-line environment variables](https://github.com/moby/moby/issues/12997), you need to replace all newlines in GITHUB_PRIVATE_KEY with `\n` so it is a single line like this:
