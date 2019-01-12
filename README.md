@@ -53,7 +53,7 @@ Pull Reminders requires a [GitHub App](https://developer.github.com/enterprise/2
     GitHub App name:      Pull Reminders
     User auth callback:   http://pullreminders.myhost.com/auth/github/callback
     Setup URL:            http://pullreminders.myhost.com/installs
-    Webhook URL:          http://pullreminders.myhost.com/webhooks/github
+    Webhook URL:          http://pullreminders.myhost.com/github_webhooks
     ```
     
     Permissions:
