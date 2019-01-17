@@ -76,6 +76,7 @@ Pull Reminders requires a [GitHub App](https://developer.github.com/enterprise/2
     Member
     Membership
     Organization
+    Repository
     ```
     
 3. After saving your GitHub App, set your app icon to the [image provided in this repo](./icon.png) and generate a private key. You should also see OAuth credentials and your app ID. You'll use this information along with your private key in the next section.
