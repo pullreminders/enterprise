@@ -1,1 +1,1 @@
-This repo contains app icons and a sample `dockerenv` file for setting up self-hosted Pull Panda instances for integration with GitHub Enterprise Server. [See the documentation →](https://docs.pullpanda.com/github-enterprise/server)
+This repo contains app icons and a sample `dockerenv` file for setting up Pull Panda on-premises for integration with GitHub Enterprise Server. [See the documentation →](https://docs.pullpanda.com/github-enterprise/server)
